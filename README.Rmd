@@ -144,7 +144,6 @@ estout M1 M2 M3 M4, ///
  varlabels(_cons Constant ) ///
  substitute("_ " "Frontier") ///
  legend label collabels(none) mlabels(none) replace
-
 ```
 
 ## Execution Speed, Models 1-4
