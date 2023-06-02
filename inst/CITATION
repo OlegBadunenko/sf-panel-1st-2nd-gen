@@ -1,0 +1,22 @@
+note <- sprintf("Stata package version %s", meta$Version)
+
+bibentry(bibtype = "incollection",
+         title = "Stochastic frontier analysis in Stata: using existing and coding new commands",
+         booktitle = "Handbook of Research Methods and Applications in Empirical Microeconomics",
+         author = c(person("Oleg","Badunenko")),
+         year = "2021",
+         pages = "489--517",
+         publisher = "Edward Elgar Publishing",
+	       address = "Cheltenham, England, UK",
+	       doi = "10.4337/9781788976480.00027",
+         header = "To cite the paper that the Stata package StataSFpanel1and2gen is based on:\n"
+)
+
+bibentry(
+  bibtype  = "Misc",
+  title    = "StataSFpanel1and2gen: Stata commands to estimate the panel data stochastic frontier models of the first and second generation",
+         author = c(person("Oleg","Badunenko")),
+  year     = "2023",
+  url      = "https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen",
+  header   = "To cite the Stata package StataSFpanel1and2gen:\n"
+)

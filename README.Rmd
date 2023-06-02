@@ -1,0 +1,163 @@
+---
+  output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+  ```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#R> ",
+  fig.path = "man/figures/README-"
+)
+```
+
+```{r, echo=FALSE, results="hide", warning=FALSE, message=FALSE}
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+stataexe <- "/Applications/Stata/StataSE.app/Contents/MacOS/StataSE"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
+```
+
+Stata commands to estimate the panel data stochastic frontier models of the first and second generation written and maintained by Oleg Badunenko (oleg.badunenko@brunel.ac.uk). The details are discussed in
+
+Stochastic frontier analysis in Stata: using existing and coding new
+commands in "Handbook of Research Methods and Applications in Empirical
+Microeconomics" (edited by Nigar Hashimzade and Michael A. Thornton),
+2021, Chapter 17, ***Edward Elgar Publishing***, [DOI
+<img src="mal/doi.png"  width="12" height="12">](https://doi.org/10.4337/9781788976480.00027)
+
+Here the functionality of the commands **xtsf1g** and **xtsf2g** are showcased. The subset of banking is used:
+
+```{stata data, collectcode=TRUE} 
+use ../../banks00_07, clear
+```
+
+# Define specifications
+
+Here are the specification and formula for first derivatives of the cost function with respect to input prices and outputs to check monotonicity assumptions and compute returns to scale.
+
+```{stata globals, collectcode=TRUE, cleanlog=FALSE, echo=TRUE}
+global spetech "lny1 lny2 lnw1 trend c.half#(c.lny1#c.lny1 c.lny2#c.lny2 c.lnw1#c.lnw1) c.lny1#(c.lny2 c.lnw1) c.lny2#c.lnw1 c.trend#(c.lny1 c.lny2 c.lnw1 c.trend#c.half)"
+global monotonW1 = "_b[lnw1] + _b[c.half#c.lnw1#c.lnw1] *lnw1 + _b[c.lny1#c.lnw1] *lny1 + _b[c.lny2#c.lnw1] *lny2 + _b[c.trend#c.lnw1] *trend"
+global monotonY1 = "_b[lny1] + _b[c.half#c.lny1#c.lny1] *lny1 + _b[c.lny1#c.lny2] *lny2 + _b[c.lny1#c.lnw1] *lnw1 + _b[c.trend#c.lny1] *trend"
+global monotonY2 = "_b[lny2] + _b[c.half#c.lny2#c.lny2] *lny2 + _b[c.lny1#c.lny2] *lny1 + _b[c.lny2#c.lnw1] *lnw1 + _b[c.trend#c.lny2] *trend"
+global year_c = 2001
+global itermax = 1000
+```
+
+# No determinants
+
+We will consider different assumptions for the error terms.
+
+## Normal-half normal (Models 1-4)
+
+Here are the models with normal-half normal assumptions.
+
+## Model 1
+
+Code for Model 1 is detailed. For the rest of the models, fewer details are shown
+
+```{stata M1, collectcode=TRUE, cleanlog=FALSE, echo=TRUE}
+timer clear 1
+timer on 1
+xtsf1g lnc $spetech if year > $year_c, cost iterate($itermax)
+timer off 1
+estadd scalar AIC = e(aic)
+estadd scalar BIC = e(bic)
+eststo M1
+quietly predictnl M1_mW1 = $monotonW1 if e(sample)
+quietly predictnl M1_mW2 = 1-M1_mW1 if e(sample)
+quietly predictnl M1_eY1 = $monotonY1 if e(sample)
+quietly predictnl M1_eY2 = $monotonY2 if e(sample)
+quietly generate double M1_rts = 1/(M1_eY1 + M1_eY2)
+tabstat M1_*, stat(min p25 mean p75 max sd) format(%9.4f)
+```
+
+
+## Model 2
+
+```{stata M2, collectcode=TRUE, cleanlog=FALSE, echo=TRUE}
+timer clear 2
+timer on 2
+xtsf2g lnc $spetech if year > $year_c, cost iterate($itermax)
+timer off 2
+estadd scalar AIC = e(aic)
+estadd scalar BIC = e(bic)
+eststo M2
+quietly predictnl M2_mW1 = $monotonW1 if e(sample)
+quietly predictnl M2_mW2 = 1-M2_mW1 if e(sample)
+quietly predictnl M2_eY1 = $monotonY1 if e(sample)
+quietly predictnl M2_eY2 = $monotonY2 if e(sample)
+quietly generate double M2_rts = 1/(M2_eY1 + M2_eY2)
+tabstat M2_*, stat(min p25 mean p75 max sd) format(%9.4f)
+```
+
+## Model 3
+
+```{stata M3, collectcode=TRUE, cleanlog=FALSE, echo=TRUE}
+timer clear 3
+timer on 3
+xtsf2g lnc $spetech if year > $year_c, model(K1990modified) cost iterate($itermax)
+timer off 3
+predict M3_te, te_jlms_mean
+estadd scalar AIC = e(aic)
+estadd scalar BIC = e(bic)
+eststo M3
+quietly predictnl M3_mW1 = $monotonW1 if e(sample)
+quietly predictnl M3_mW2 = 1-M3_mW1 if e(sample)
+quietly predictnl M3_eY1 = $monotonY1 if e(sample)
+quietly predictnl M3_eY2 = $monotonY2 if e(sample)
+generate double M3_rts = 1/(M3_eY1 + M3_eY2)
+tabstat M3_*, stat(min p25 mean p75 max sd) format(%9.4f)
+```
+
+## Model 4
+
+```{stata M4, collectcode=TRUE, cleanlog=FALSE, echo=TRUE}
+timer clear 4
+timer on 4
+xtsf2g lnc $spetech if year > $year_c, model(BC1992) cost iterate($itermax)
+timer off 4
+estadd scalar AIC = e(aic)
+estadd scalar BIC = e(bic)
+eststo M4
+quietly predictnl M4_mW1 = $monotonW1 if e(sample)
+quietly predictnl M4_mW2 = 1-M4_mW1 if e(sample)
+quietly predictnl M4_eY1 = $monotonY1 if e(sample)
+quietly predictnl M4_eY2 = $monotonY2 if e(sample)
+generate double M4_rts = 1/(M4_eY1 + M4_eY2)
+tabstat M4_*, stat(min p25 mean p75 max sd) format(%9.4f)
+```
+
+## Results of Models 1-4
+
+Use *estout* command for this:
+
+```{stata estoutM1M4, collectcode=TRUE, cleanlog=TRUE, echo=TRUE}
+estout M1 M2 M3 M4, ///
+ cells(b(star fmt(%9.4f)) se(par)) ///
+ stats(AIC BIC shat RSS ll N sumTi, ///
+ labels("AIC" "BIC" "\$\hat\sigma\$" "RSS" "log-likelihood" "\$N\$" "\$\sum T_{i}\$") ///
+ fmt(%9.4f %9.4f %9.4f %9.2f %9.2f %9.0f %9.0f)) ///
+ starlevels(* 0.10 ** 0.05 *** 0.01) ///
+ varlabels(_cons Constant ) ///
+ substitute("_ " "Frontier") ///
+ legend label collabels(none) mlabels(none) replace
+
+```
+
+## Execution Speed, Models 1-4
+
+It took so many seconds:
+
+```{stata timerM1M4, collectcode=FALSE, cleanlog=TRUE, echo=TRUE}
+timer list 1
+timer list 2
+timer list 3
+timer list 4
+```
+
+That is it for now.
+
+

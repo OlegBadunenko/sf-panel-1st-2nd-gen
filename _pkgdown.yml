@@ -1,0 +1,31 @@
+title: StataSFpanel1and2gen
+
+template:
+  params:
+    bootswatch: spacelab
+
+
+authors:
+  Oleg Badunenko:
+    href: https://OlegBadunenko.github.io/
+
+navbar:
+  title: "didnp"
+  left:
+    - text: "User Guide"
+      href: book-examples.html
+    - text: "News/Changelog"
+      href: news/index.html
+
+home:
+  links:
+    - text: Source Code
+      href: https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen
+
+articles:
+  - title: User Guide
+    desc: >
+      The article guides through the code to replicate the results presented
+      in the chapter.
+    contents:
+    - boob-examples
