@@ -36,7 +36,7 @@ The inefficiency follow the $u_{it} = \beta(t) u_{i}$. In the 4 models below, $\
 
 1. $\beta(t) = 1$ (time-invariant inefficiency)
 2. $\beta(t) = ( 1 + \exp(\gamma t + \delta t^2) )^-1$ (time-variant inefficiency)
-3. $\beta(t) = 1 + \gamma*(t-T_i) + \delta*(t-T_i)^2$ (time-variant inefficiency)
+3. $\beta(t) = 1 + \gamma (t-T_i) + \delta (t-T_i)^2$ (time-variant inefficiency)
 4. $\beta(t) = \exp( -\gamma (t-T_i) )$ (time-variant inefficiency)
 
 # Models 1-4: Normal-half normal

@@ -2,7 +2,6 @@
 
 - added heterogeneous error components
 
-
 # Version this 1.0.0
 
 - the first version of package
