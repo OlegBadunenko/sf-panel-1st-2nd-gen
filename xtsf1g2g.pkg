@@ -1,0 +1,13 @@
+v 3
+
+d Stata commands to estimate the panel data stochastic frontier models of the first and second generation written and maintained by Oleg Badunenko
+
+f 1gen/xtsf1g_p.ado
+f 1gen/xtsf1g_postestimation.sthlp
+f 1gen/xtsf1g.ado
+f 1gen/xtsf1g.sthlp
+
+f 2gen/xtsf2g_p.ado
+f 2gen/xtsf2g_postestimation.sthlp
+f 2gen/xtsf2g.ado
+f 2gen/xtsf2g.sthlp
