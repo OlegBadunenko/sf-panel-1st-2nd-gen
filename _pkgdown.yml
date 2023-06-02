@@ -4,7 +4,6 @@ template:
   params:
     bootswatch: spacelab
 
-
 authors:
   Oleg Badunenko:
     href: https://OlegBadunenko.github.io/
