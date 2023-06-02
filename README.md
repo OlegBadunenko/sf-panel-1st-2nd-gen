@@ -14,7 +14,7 @@ Microeconomics” (edited by Nigar Hashimzade and Michael A. Thornton),
 2021, Chapter 17, ***Edward Elgar Publishing***, [DOI
 <img src="man/figures/doi.png"  width="12" height="12">](https://doi.org/10.4337/9781788976480.00027)
 
-Codes to replicate the results in the chapter can be found [here](book-examples.html).
+Codes to replicate the results in the chapter can be found [here](https://olegbadunenko.github.io/sf-panel-1st-2nd-gen/book-examples.html).
 
 
 # Installation
@@ -59,4 +59,4 @@ for the second generation models.
 
 # Uses
 
-This [article](book-examples.html) guides through the code to replicate the results presented in the above chapter.
+This [article](https://olegbadunenko.github.io/sf-panel-1st-2nd-gen/book-examples.html) guides through the code to replicate the results presented in the above chapter.
