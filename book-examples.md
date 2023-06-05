@@ -815,7 +815,7 @@ added scalar:
 ------------------------------------------------------------
 ```
 
-## Model 6 (2nd generation, time-varying inefficiency using the Kumbhakar (1990) specification)
+## Model 6
 
 ``` stata
 timer clear 6
@@ -959,7 +959,7 @@ added scalar:
 ------------------------------------------------------------
 ```
 
-## Model 7 (2nd generation, time-varying inefficiency using the modified Kumbhakar (1990) specification)
+## Model 7
 
 
 ``` stata
@@ -1102,7 +1102,7 @@ added scalar:
 ----------------------------------------------------------------------
 ```
 
-## Model 8 (2nd generation, time-varying inefficiency using the BC specification)
+## Model 8
 
 ``` stata
 timer clear 8
