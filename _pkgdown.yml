@@ -23,3 +23,8 @@ articles:
       in the chapter.
     contents:
     - book-examples
+
+home:
+  links:
+    - text: Source Code
+      href: https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen
