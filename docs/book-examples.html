@@ -44,7 +44,9 @@
 <div id="replication" class="section level1">
 
 <p>In this article, the functionality of the commands <strong>xtsf1g</strong> and <strong>xtsf2g</strong> is showcased. At the same time, the code provided below can be used to replicate the results in the chapter:</p>
+<blockquote>
 <p>Stochastic frontier analysis in Stata: using existing and coding new commands in “Handbook of Research Methods and Applications in Empirical Microeconomics” (edited by Nigar Hashimzade and Michael A. Thornton), 2021, Chapter 17, <strong><em>Edward Elgar Publishing</em></strong>, <a href="https://doi.org/10.4337/9781788976480.00027" class="external-link">DOI <img src="reference/figures/doi.png" width="12" height="12"></a></p>
+</blockquote>
 <p>Throughout the article, the subset of the banking data (which can be found <a href="https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen/tree/main/data" class="external-link">here</a>) will be used:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">use</span> ../../banks00_07, <span class="kw">clear</span></span></code></pre></div>
 </div>
@@ -61,7 +63,9 @@
 </div>
 <div class="section level1">
 <h1 id="no-determinants-of-inefficiency">No determinants of inefficiency<a class="anchor" aria-label="anchor" href="#no-determinants-of-inefficiency"></a></h1>
+<blockquote>
 <p>In the first 8 models the specification models don’t include determinants of inefficiency.</p>
+</blockquote>
 <p>The inefficiency follow the <span class="math inline"><em>u</em><sub><em>i</em><em>t</em></sub> = <em>β</em>(<em>t</em>)<em>u</em><sub><em>i</em></sub></span>. In the 4 models below, <span class="math inline"><em>β</em>(<em>t</em>)</span> is defined as follows:</p>
 <ol style="list-style-type: decimal"><li>
 <span class="math inline"><em>β</em>(<em>t</em>) = 1</span> (time-invariant inefficiency)</li>
@@ -1343,7 +1347,7 @@
 <p>so that <span class="math inline"><em>u</em><sub><em>i</em></sub> ∼ <em>N</em><sup>+</sup>(<strong>z</strong><sub><em>u</em><sub>2<em>i</em></sub></sub><strong>δ</strong><sub><em>u</em></sub>,<em>σ</em><sub><em>u</em></sub><sup>2</sup>)</span> and only <span class="math inline"><strong>δ</strong><sub><em>u</em></sub></span> parameters are estimated instead of <span class="math inline"><em>μ</em><sub><em>i</em></sub>, <em>i</em> = 1, …, <em>N</em></span>.</p>
 <p>With half-normal or truncated normal distribution, the inefficiency term is still <em>i.i.d.</em>, which can introduce bias. If the heteroskedasticity function is known, bias can be eliminated by making <span class="math inline"><em>σ</em><sub><em>u</em></sub><sup>2</sup></span> observation specific (see <a href="https://doi.org/10.1080/07350015.1995.10524583" class="external-link">Caudill, Ford and Gropper, 1995</a>)</p>
 <p><span class="math display">ln <em>σ</em><sub><em>u</em><sub><em>i</em></sub></sub><sup>2</sup> = <strong>z</strong><sub><em>u</em><sub>1<em>i</em></sub></sub><strong>γ</strong><sub><em>u</em></sub></span></p>
-<p>Besides, since <span class="math inline"><em>E</em>(<em>u</em><sub><em>i</em></sub>) = (2/<em>π</em>)<sup>1/2</sup><em>σ</em><sub><em>u</em><sub><em>i</em></sub></sub> = (2/<em>π</em>)<sup>1/2</sup>exp 0.5<strong>z</strong><sub><em>u</em><em>i</em></sub><strong>γ</strong><sub><em>u</em></sub></span>, the <span class="math inline"><strong>z</strong><sub><em>u</em><em>i</em></sub></span> variables can be viewed as determinants of persistent inefficiency.</p>
+<p>Besides, since <span class="math inline"><em>E</em>(<em>u</em><sub><em>i</em></sub>) = (2/<em>π</em>)<sup>1/2</sup><em>σ</em><sub><em>u</em><sub><em>i</em></sub></sub> = (2/<em>π</em>)<sup>1/2</sup>exp 0.5<strong>z</strong><sub><em>u</em><sub>1<em>i</em></sub></sub><strong>γ</strong><sub><em>u</em></sub></span>, the <span class="math inline"><strong>z</strong><sub><em>u</em><sub>1<em>i</em></sub></sub></span> variables can be viewed as determinants of persistent inefficiency.</p>
 <p>Similarly, the heteroskedasticity function of noise can be specified <span class="math display">ln <em>σ</em><sub><em>v</em><sub><em>i</em><em>t</em></sub></sub><sup>2</sup> = <strong>z</strong><sub><em>v</em><sub><em>i</em><em>t</em></sub></sub><strong>γ</strong><sub><em>v</em></sub>.</span></p>
 <p>In the following, <span class="math inline"><em>μ</em><sub><em>i</em></sub></span> is defined by <code>uimean</code>, <span class="math inline">ln <em>σ</em><sub><em>u</em><sub><em>i</em></sub></sub><sup>2</sup></span> is defined by <code>uilnvariance</code>, and <span class="math inline">ln <em>σ</em><sub><em>v</em><sub><em>i</em><em>t</em></sub></sub><sup>2</sup></span> is defined by <code>vitlnvariance</code>.</p>
 <div class="section level2">

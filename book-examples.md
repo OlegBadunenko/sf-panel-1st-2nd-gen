@@ -1,19 +1,10 @@
 # Replication
 
-In this article, the functionality of the commands **xtsf1g** and
-**xtsf2g** is showcased. At the same time, the code provided below can
-be used to replicate the results in the chapter:
+In this article, the functionality of the commands **xtsf1g** and **xtsf2g** is showcased. At the same time, the code provided below can be used to replicate the results in the chapter:
 
-Stochastic frontier analysis in Stata: using existing and coding new
-commands in "Handbook of Research Methods and Applications in Empirical
-Microeconomics" (edited by Nigar Hashimzade and Michael A. Thornton),
-2021, Chapter 17, ***Edward Elgar Publishing***, [DOI
-<img src="man/figures/doi.png" width="12" height="12"/>](https://doi.org/10.4337/9781788976480.00027)
+> Stochastic frontier analysis in Stata: using existing and coding new commands in "Handbook of Research Methods and Applications in Empirical Microeconomics" (edited by Nigar Hashimzade and Michael A. Thornton), 2021, Chapter 17, ***Edward Elgar Publishing***, [DOI <img src="man/figures/doi.png" width="12" height="12"/>](https://doi.org/10.4337/9781788976480.00027)
 
-Throughout the article, the subset of the banking data (which can be
-found
-[here](https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen/tree/main/data))
-will be used:
+Throughout the article, the subset of the banking data (which can be found [here](https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen/tree/main/data)) will be used:
 
 ``` stata
 use ../../banks00_07, clear
@@ -21,9 +12,7 @@ use ../../banks00_07, clear
 
 # Define specifications
 
-Here are the specification and formulas for the first derivatives of the
-cost function with respect to input prices and outputs to check
-monotonicity assumptions and compute returns to scale are defined:
+Here are the specification and formulas for the first derivatives of the cost function with respect to input prices and outputs to check monotonicity assumptions and compute returns to scale are defined:
 
 ``` stata
 global spetech "lny1 lny2 lnw1 trend c.half#(c.lny1#c.lny1 c.lny2#c.lny2 c.lnw1#c.lnw1) c.lny1#(c.lny2 c.lnw1) c.lny2#c.lnw1 c.trend#(c.lny1 c.lny2 c.lnw1 c.trend#c.half)"
@@ -37,17 +26,13 @@ global decimalopt "cformat(%9.3f) pformat(%5.2f) sformat(%8.2f)"
 
 # No determinants of inefficiency
 
-In the first 8 models the specification models don't include
-determinants of inefficiency.
+> In the first 8 models the specification models don't include determinants of inefficiency.
 
-The inefficiency follow the $u_{it} = \beta(t) u_{i}$. In the 4 models
-below, $\beta(t)$ is defined as follows:
+The inefficiency follow the $u_{it} = \beta(t) u_{i}$. In the 4 models below, $\beta(t)$ is defined as follows:
 
 1.  $\beta(t) = 1$ (time-invariant inefficiency)
-2.  $\beta(t) = ( 1 + \exp(\gamma t + \delta t^2) )^-1$ (time-variant
-    inefficiency)
-3.  $\beta(t) = 1 + \gamma (t-T_i) + \delta (t-T_i)^2$ (time-variant
-    inefficiency)
+2.  $\beta(t) = ( 1 + \exp(\gamma t + \delta t^2) )^-1$ (time-variant inefficiency)
+3.  $\beta(t) = 1 + \gamma (t-T_i) + \delta (t-T_i)^2$ (time-variant inefficiency)
 4.  $\beta(t) = \exp( -\gamma (t-T_i) )$ (time-variant inefficiency)
 
 # Models 1-4: Normal-half normal
@@ -58,8 +43,7 @@ Here are the models with normal-half normal assumptions.
 
 We start by the simplest one where $u_{it} = u_{i}$.
 
-Code for Model 1 is detailed. For the rest of the models, fewer details
-are shown
+Code for Model 1 is detailed. For the rest of the models, fewer details are shown
 
 ``` stata
 timer clear 1
@@ -185,8 +169,7 @@ added scalar:
 
 ## Model 2 (2nd generation, time-varying inefficiency using the Kumbhakar (1990) specification)
 
-This specification is by [Kumbhakar
-(1990)](https://doi.org/10.1016/0304-4076(90)90055-X)
+This specification is by [Kumbhakar (1990)](https://doi.org/10.1016/0304-4076(90)90055-X)
 
 ``` stata
 timer clear 2
@@ -599,8 +582,7 @@ added scalar:
 
 ## Results of Models 1-4
 
-Use the *estout* command for this. Note that parameters $\delta$ and
-$\gamma$ have different interpretation in models 2-4.
+Use the *estout* command for this. Note that parameters $\delta$ and $\gamma$ have different interpretation in models 2-4.
 
 ``` stata
 estout M1 M2 M3 M4, ///
@@ -1251,8 +1233,7 @@ added scalar:
 
 ## Results of Models 5-8
 
-Use the *estout* command for this. Note that parameters $\delta$ and
-$\gamma$ have different interpretation in models 6-8.
+Use the *estout* command for this. Note that parameters $\delta$ and $\gamma$ have different interpretation in models 6-8.
 
 ``` stata
 estout M5 M6 M7 M8, ///
@@ -1351,42 +1332,27 @@ In this section time-invariant determinants of inefficiency are used.
 
 # Models 9-12: with determinants
 
-The following specifications are used for the next models. The
-conditional mean of the truncated distribution can be made observation
-specific by imposing linear structure on it as in [Kumbhakar et al
-(1991)](https://doi.org/10.1080/07350015.1991.10509853),
+The following specifications are used for the next models. The conditional mean of the truncated distribution can be made observation specific by imposing linear structure on it as in [Kumbhakar et al (1991)](https://doi.org/10.1080/07350015.1991.10509853),
 
 $$
 \mu_{i} = E[u_{i}|\boldsymbol{z}_{u_{2i}}] = \boldsymbol{z}_{u_{2i}} \boldsymbol{\delta}_{u},
 $$
 
-so that
-$u_{i} \sim N^{+}( \boldsymbol{z}_{u_{2i}} \boldsymbol{\delta}_{u}, \sigma_{u}^{2} )$
-and only $\boldsymbol{\delta}_{u}$ parameters are estimated instead of
-$\mu_{i}, i=1,\ldots, N$.
+so that $u_{i} \sim N^{+}( \boldsymbol{z}_{u_{2i}} \boldsymbol{\delta}_{u}, \sigma_{u}^{2} )$ and only $\boldsymbol{\delta}_{u}$ parameters are estimated instead of $\mu_{i}, i=1,\ldots, N$.
 
-With half-normal or truncated normal distribution, the inefficiency term
-is still *i.i.d.*, which can introduce bias. If the heteroskedasticity
-function is known, bias can be eliminated by making $\sigma_{u}^{2}$
-observation specific (see [Caudill, Ford and Gropper,
-1995](https://doi.org/10.1080/07350015.1995.10524583))
+With half-normal or truncated normal distribution, the inefficiency term is still *i.i.d.*, which can introduce bias. If the heteroskedasticity function is known, bias can be eliminated by making $\sigma_{u}^{2}$ observation specific (see [Caudill, Ford and Gropper, 1995](https://doi.org/10.1080/07350015.1995.10524583))
 
 $$
 \ln{ \sigma_{u_{i}}^{2}} = \boldsymbol{z}_{u_{1i}} \boldsymbol{\gamma}_{u}
 $$
 
-Besides, since
-$E(u_{i})= (2/\pi)^{1/2}\sigma_{u_{i}} = (2/\pi)^{1/2} \exp{0.5 \boldsymbol{z}_{ui} \boldsymbol{\gamma}_{u}}$,
-the $\boldsymbol{z}_{ui}$ variables can be viewed as determinants of
-persistent inefficiency.
+Besides, since $E(u_{i})= (2/\pi)^{1/2}\sigma_{u_{i}} = (2/\pi)^{1/2} \exp{0.5 \boldsymbol{z}_{u_{1i}} \boldsymbol{\gamma}_{u}}$, the $\boldsymbol{z}_{u_{1i}}$ variables can be viewed as determinants of persistent inefficiency.
 
 Similarly, the heteroskedasticity function of noise can be specified $$
 \ln{ \sigma_{v_{it}}^{2}} = \boldsymbol{z}_{v_{it}} \boldsymbol{\gamma}_{v}.
 $$
 
-In the following, $\mu_i$ is defined by `uimean`,
-$\ln{ \sigma_{u_{i}}^{2}}$ is defined by `uilnvariance`, and
-$\ln{ \sigma_{v_{it}}^{2}}$ is defined by `vitlnvariance`.
+In the following, $\mu_i$ is defined by `uimean`, $\ln{ \sigma_{u_{i}}^{2}}$ is defined by `uilnvariance`, and $\ln{ \sigma_{v_{it}}^{2}}$ is defined by `vitlnvariance`.
 
 ## Model 9
 
@@ -1965,8 +1931,7 @@ added scalar:
 
 ## Results of Models 9-12
 
-Use the *estout* command for this. Note that parameters $\delta$ and
-$\gamma$ have different interpretation in models 2-4.
+Use the *estout* command for this. Note that parameters $\delta$ and $\gamma$ have different interpretation in models 2-4.
 
 ``` stata
 estout M9 M10 M11 M12, ///
