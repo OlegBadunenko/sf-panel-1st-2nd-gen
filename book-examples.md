@@ -171,7 +171,9 @@ added scalar:
 ------------------------------------------------------------
 ```
 
-## Model 2 (2nd generation, time-varying inefficiency using the Kumbhakar specification)
+## Model 2 (2nd generation, time-varying inefficiency using the Kumbhakar (1990) specification)
+
+This specification is by [Kumbhakar (1990)](https://doi.org/10.1016/0304-4076(90)90055-X)
 
 ``` stata
 timer clear 2
@@ -307,7 +309,7 @@ added scalar:
 ------------------------------------------------------------
 ```
 
-## Model 3 (2nd generation, time-varying inefficiency using the modified Kumbhakar specification)
+## Model 3 (2nd generation, time-varying inefficiency using the modified Kumbhakar (1990) specification)
 
 
 ``` stata
@@ -807,7 +809,7 @@ added scalar:
 ------------------------------------------------------------
 ```
 
-## Model 6 (2nd generation, time-varying inefficiency using the Kumbhakar specification)
+## Model 6 (2nd generation, time-varying inefficiency using the Kumbhakar (1990) specification)
 
 ``` stata
 timer clear 6
@@ -951,7 +953,7 @@ added scalar:
 ------------------------------------------------------------
 ```
 
-## Model 7 (2nd generation, time-varying inefficiency using the modified Kumbhakar specification)
+## Model 7 (2nd generation, time-varying inefficiency using the modified Kumbhakar (1990) specification)
 
 
 ``` stata
@@ -1335,7 +1337,7 @@ In this section time-invariant determinants of inefficiency are used.
 
 # Models 9-12: with determinants
 
-The following specifications are used for the next models. The conditional mean of the truncated distribution can be made observation specific by imposing linear structure on it as in Kumbhakar et al (1991),
+The following specifications are used for the next models. The conditional mean of the truncated distribution can be made observation specific by imposing linear structure on it as in [Kumbhakar et al (1991)](https://doi.org/10.1080/07350015.1991.10509853),
 
 $$
 \mu_{i} = E[u_{i}|\boldsymbol{z}_{u_{2i}}] = \boldsymbol{z}_{u_{2i}} \boldsymbol{\delta}_{u},
@@ -1343,7 +1345,7 @@ $$
 
 so that $u_{i} \sim N^{+}( \boldsymbol{z}_{u_{2i}} \boldsymbol{\delta}_{u}, \sigma_{u}^{2} )$ and only $\boldsymbol{\delta}_{u}$ parameters are estimated instead of $\mu_{i}, i=1,\ldots, N$. 
 
-With half-normal or truncated normal distribution, the inefficiency term is still *i.i.d.*, which can introduce bias. If the heteroskedasticity function is known, bias can be eliminated by making $\sigma_{u}^{2}$ observation specific (see Caudill et al 95))
+With half-normal or truncated normal distribution, the inefficiency term is still *i.i.d.*, which can introduce bias. If the heteroskedasticity function is known, bias can be eliminated by making $\sigma_{u}^{2}$ observation specific (see [Caudill, Ford and Gropper, 1995](https://doi.org/10.1080/07350015.1995.10524583))
 
 $$
 \ln{ \sigma_{u_{i}}^{2}} = \boldsymbol{z}_{u_{1i}} \boldsymbol{\gamma}_{u}

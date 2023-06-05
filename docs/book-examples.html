@@ -28,13 +28,7 @@
 <li>
   <a href="news/index.html">News/Changelog</a>
 </li>
-      </ul><ul class="nav navbar-nav navbar-right"><li>
-  <a href="https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen/" class="external-link">
-    <span class="fab fa-github fa-lg"></span>
-     
-  </a>
-</li>
-      </ul></div><!--/.nav-collapse -->
+      </ul><ul class="nav navbar-nav navbar-right"></ul></div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
 
@@ -204,7 +198,8 @@
 <span id="cb3-118"><a href="#cb3-118" tabindex="-1"></a>------------------------------------------------------------</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="model-2-2nd-generation-time-varying-inefficiency-using-the-kumbhakar-specification">Model 2 (2nd generation, time-varying inefficiency using the Kumbhakar specification)<a class="anchor" aria-label="anchor" href="#model-2-2nd-generation-time-varying-inefficiency-using-the-kumbhakar-specification"></a></h2>
+<h2 id="model-2-2nd-generation-time-varying-inefficiency-using-the-kumbhakar-1990-specification">Model 2 (2nd generation, time-varying inefficiency using the Kumbhakar (1990) specification)<a class="anchor" aria-label="anchor" href="#model-2-2nd-generation-time-varying-inefficiency-using-the-kumbhakar-1990-specification"></a></h2>
+<p>This specification is by <a href="https://doi.org/10.1016/0304-4076(90)90055-X" class="external-link">Kumbhakar (1990)</a></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">clear</span> 2</span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">on</span> 2</span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>xtsf2g lnc <span class="ot">$spetech</span> <span class="kw">if</span> <span class="fu">year</span> &gt; <span class="ot">$year_c</span>, cost <span class="kw">iterate</span>(<span class="ot">$itermax</span>)</span>
@@ -338,7 +333,7 @@
 <span id="cb4-131"><a href="#cb4-131" tabindex="-1"></a>------------------------------------------------------------</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="model-3-2nd-generation-time-varying-inefficiency-using-the-modified-kumbhakar-specification">Model 3 (2nd generation, time-varying inefficiency using the modified Kumbhakar specification)<a class="anchor" aria-label="anchor" href="#model-3-2nd-generation-time-varying-inefficiency-using-the-modified-kumbhakar-specification"></a></h2>
+<h2 id="model-3-2nd-generation-time-varying-inefficiency-using-the-modified-kumbhakar-1990-specification">Model 3 (2nd generation, time-varying inefficiency using the modified Kumbhakar (1990) specification)<a class="anchor" aria-label="anchor" href="#model-3-2nd-generation-time-varying-inefficiency-using-the-modified-kumbhakar-1990-specification"></a></h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">clear</span> 3</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">on</span> 3</span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>xtsf2g lnc <span class="ot">$spetech</span> <span class="kw">if</span> <span class="fu">year</span> &gt; <span class="ot">$year_c</span>, <span class="kw">model</span>(K1990modified) cost <span class="kw">iterate</span>(<span class="ot">$itermax</span>)</span>
@@ -825,7 +820,7 @@
 <span id="cb9-127"><a href="#cb9-127" tabindex="-1"></a>------------------------------------------------------------</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="model-6-2nd-generation-time-varying-inefficiency-using-the-kumbhakar-specification">Model 6 (2nd generation, time-varying inefficiency using the Kumbhakar specification)<a class="anchor" aria-label="anchor" href="#model-6-2nd-generation-time-varying-inefficiency-using-the-kumbhakar-specification"></a></h2>
+<h2 id="model-6-2nd-generation-time-varying-inefficiency-using-the-kumbhakar-1990-specification">Model 6 (2nd generation, time-varying inefficiency using the Kumbhakar (1990) specification)<a class="anchor" aria-label="anchor" href="#model-6-2nd-generation-time-varying-inefficiency-using-the-kumbhakar-1990-specification"></a></h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">clear</span> 6</span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">on</span> 6</span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>xtsf2g lnc <span class="ot">$spetech</span> <span class="kw">if</span> <span class="fu">year</span> &gt; <span class="ot">$year_c</span>, cost <span class="kw">iterate</span>(<span class="ot">$itermax</span>) distribution(t)</span>
@@ -967,7 +962,7 @@
 <span id="cb10-139"><a href="#cb10-139" tabindex="-1"></a>------------------------------------------------------------</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="model-7-2nd-generation-time-varying-inefficiency-using-the-modified-kumbhakar-specification">Model 7 (2nd generation, time-varying inefficiency using the modified Kumbhakar specification)<a class="anchor" aria-label="anchor" href="#model-7-2nd-generation-time-varying-inefficiency-using-the-modified-kumbhakar-specification"></a></h2>
+<h2 id="model-7-2nd-generation-time-varying-inefficiency-using-the-modified-kumbhakar-1990-specification">Model 7 (2nd generation, time-varying inefficiency using the modified Kumbhakar (1990) specification)<a class="anchor" aria-label="anchor" href="#model-7-2nd-generation-time-varying-inefficiency-using-the-modified-kumbhakar-1990-specification"></a></h2>
 <div class="sourceCode" id="cb11"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">clear</span> 7</span>
 <span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">on</span> 7</span>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>xtsf2g lnc <span class="ot">$spetech</span> <span class="kw">if</span> <span class="fu">year</span> &gt; <span class="ot">$year_c</span>, <span class="kw">model</span>(K1990modified) cost <span class="kw">iterate</span>(<span class="ot">$itermax</span>) distribution(t)</span>
@@ -1340,10 +1335,10 @@
 </div>
 <div class="section level1">
 <h1 id="models-9-12-with-determinants">Models 9-12: with determinants<a class="anchor" aria-label="anchor" href="#models-9-12-with-determinants"></a></h1>
-<p>The following specifications are used for the next models. The conditional mean of the truncated distribution can be made observation specific by imposing linear structure on it as in Kumbhakar et al (1991),</p>
+<p>The following specifications are used for the next models. The conditional mean of the truncated distribution can be made observation specific by imposing linear structure on it as in <a href="https://doi.org/10.1080/07350015.1991.10509853" class="external-link">Kumbhakar et al (1991)</a>,</p>
 <p><span class="math display"><em>μ</em><sub><em>i</em></sub> = <em>E</em>[<em>u</em><sub><em>i</em></sub>|<strong>z</strong><sub><em>u</em><sub>2<em>i</em></sub></sub>] = <strong>z</strong><sub><em>u</em><sub>2<em>i</em></sub></sub><strong>δ</strong><sub><em>u</em></sub>,</span></p>
 <p>so that <span class="math inline"><em>u</em><sub><em>i</em></sub> ∼ <em>N</em><sup>+</sup>(<strong>z</strong><sub><em>u</em><sub>2<em>i</em></sub></sub><strong>δ</strong><sub><em>u</em></sub>,<em>σ</em><sub><em>u</em></sub><sup>2</sup>)</span> and only <span class="math inline"><strong>δ</strong><sub><em>u</em></sub></span> parameters are estimated instead of <span class="math inline"><em>μ</em><sub><em>i</em></sub>, <em>i</em> = 1, …, <em>N</em></span>.</p>
-<p>With half-normal or truncated normal distribution, the inefficiency term is still <em>i.i.d.</em>, which can introduce bias. If the heteroskedasticity function is known, bias can be eliminated by making <span class="math inline"><em>σ</em><sub><em>u</em></sub><sup>2</sup></span> observation specific (see Caudill et al 95))</p>
+<p>With half-normal or truncated normal distribution, the inefficiency term is still <em>i.i.d.</em>, which can introduce bias. If the heteroskedasticity function is known, bias can be eliminated by making <span class="math inline"><em>σ</em><sub><em>u</em></sub><sup>2</sup></span> observation specific (see <a href="https://doi.org/10.1080/07350015.1995.10524583" class="external-link">Caudill, Ford and Gropper, 1995</a>)</p>
 <p><span class="math display">ln <em>σ</em><sub><em>u</em><sub><em>i</em></sub></sub><sup>2</sup> = <strong>z</strong><sub><em>u</em><sub>1<em>i</em></sub></sub><strong>γ</strong><sub><em>u</em></sub></span></p>
 <p>Besides, since <span class="math inline"><em>E</em>(<em>u</em><sub><em>i</em></sub>) = (2/<em>π</em>)<sup>1/2</sup><em>σ</em><sub><em>u</em><sub><em>i</em></sub></sub> = (2/<em>π</em>)<sup>1/2</sup>exp 0.5<strong>z</strong><sub><em>u</em><em>i</em></sub><strong>γ</strong><sub><em>u</em></sub></span>, the <span class="math inline"><strong>z</strong><sub><em>u</em><em>i</em></sub></span> variables can be viewed as determinants of persistent inefficiency.</p>
 <p>Similarly, the heteroskedasticity function of noise can be specified <span class="math display">ln <em>σ</em><sub><em>v</em><sub><em>i</em><em>t</em></sub></sub><sup>2</sup> = <strong>z</strong><sub><em>v</em><sub><em>i</em><em>t</em></sub></sub><strong>γ</strong><sub><em>v</em></sub>.</span></p>

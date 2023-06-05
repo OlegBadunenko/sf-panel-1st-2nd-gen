@@ -7,7 +7,7 @@ Authors@R: c(
       comment = c(ORCID = "0000-0001-7216-0861")
     )
   )
-URL: https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen
+URL: https://olegbadunenko.github.io/sf-panel-1st-2nd-gen
 Maintainer: The package maintainer <Oleg.Badunenko@brunel.ac.uk>
 Description: Stata commands to estimate the panel data stochastic 
     frontier models of the first and second generation
