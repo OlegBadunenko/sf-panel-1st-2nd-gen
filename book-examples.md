@@ -693,7 +693,7 @@ The estimation is extremely fast. Time in seconds:
 
 Here are the models with normal-truncated normal assumptions.
 
-## Model 5
+## Model 5 (1g)
 
 ``` stata
 timer clear 5
@@ -825,7 +825,7 @@ added scalar:
 ------------------------------------------------------------
 ```
 
-## Model 6
+## Model 6 (2g)
 
 ``` stata
 timer clear 6
@@ -969,7 +969,7 @@ added scalar:
 ------------------------------------------------------------
 ```
 
-## Model 7
+## Model 7 (2g)
 
 ``` stata
 timer clear 7
@@ -1111,7 +1111,7 @@ added scalar:
 ----------------------------------------------------------------------
 ```
 
-## Model 8
+## Model 8 (2g)
 
 ``` stata
 timer clear 8

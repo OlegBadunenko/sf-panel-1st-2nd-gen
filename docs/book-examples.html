@@ -695,7 +695,7 @@
 <h1 id="models-5-8-normal-truncated-normal">Models 5-8: Normal-truncated normal<a class="anchor" aria-label="anchor" href="#models-5-8-normal-truncated-normal"></a></h1>
 <p>Here are the models with normal-truncated normal assumptions.</p>
 <div class="section level2">
-<h2 id="model-5">Model 5<a class="anchor" aria-label="anchor" href="#model-5"></a></h2>
+<h2 id="model-5-1g">Model 5 (1g)<a class="anchor" aria-label="anchor" href="#model-5-1g"></a></h2>
 <div class="sourceCode" id="cb9"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">clear</span> 5</span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">on</span> 5</span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>xtsf1g lnc <span class="ot">$spetech</span> <span class="kw">if</span> <span class="fu">year</span> &gt; <span class="ot">$year_c</span>, cost <span class="kw">iterate</span>(<span class="ot">$itermax</span>) distribution(t) <span class="ot">$decimalopt</span></span>
@@ -825,7 +825,7 @@
 <span id="cb9-127"><a href="#cb9-127" tabindex="-1"></a>------------------------------------------------------------</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="model-6">Model 6<a class="anchor" aria-label="anchor" href="#model-6"></a></h2>
+<h2 id="model-6-2g">Model 6 (2g)<a class="anchor" aria-label="anchor" href="#model-6-2g"></a></h2>
 <div class="sourceCode" id="cb10"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">clear</span> 6</span>
 <span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">on</span> 6</span>
 <span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>xtsf2g lnc <span class="ot">$spetech</span> <span class="kw">if</span> <span class="fu">year</span> &gt; <span class="ot">$year_c</span>, cost <span class="kw">iterate</span>(<span class="ot">$itermax</span>) distribution(t) <span class="ot">$decimalopt</span></span>
@@ -967,7 +967,7 @@
 <span id="cb10-139"><a href="#cb10-139" tabindex="-1"></a>------------------------------------------------------------</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="model-7">Model 7<a class="anchor" aria-label="anchor" href="#model-7"></a></h2>
+<h2 id="model-7-2g">Model 7 (2g)<a class="anchor" aria-label="anchor" href="#model-7-2g"></a></h2>
 <div class="sourceCode" id="cb11"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">clear</span> 7</span>
 <span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">on</span> 7</span>
 <span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>xtsf2g lnc <span class="ot">$spetech</span> <span class="kw">if</span> <span class="fu">year</span> &gt; <span class="ot">$year_c</span>, <span class="kw">model</span>(K1990modified) cost <span class="kw">iterate</span>(<span class="ot">$itermax</span>) distribution(t) <span class="ot">$decimalopt</span></span>
@@ -1107,7 +1107,7 @@
 <span id="cb11-137"><a href="#cb11-137" tabindex="-1"></a>----------------------------------------------------------------------</span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="model-8">Model 8<a class="anchor" aria-label="anchor" href="#model-8"></a></h2>
+<h2 id="model-8-2g">Model 8 (2g)<a class="anchor" aria-label="anchor" href="#model-8-2g"></a></h2>
 <div class="sourceCode" id="cb12"><pre class="sourceCode stata"><code class="sourceCode stata"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">clear</span> 8</span>
 <span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="kw">timer</span> <span class="kw">on</span> 8</span>
 <span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>xtsf2g lnc <span class="ot">$spetech</span> <span class="kw">if</span> <span class="fu">year</span> &gt; <span class="ot">$year_c</span>, <span class="kw">model</span>(BC1992) cost <span class="kw">iterate</span>(<span class="ot">$itermax</span>) distribution(t) <span class="ot">$decimalopt</span></span>
