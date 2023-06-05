@@ -9,7 +9,7 @@ Microeconomics” (edited by Nigar Hashimzade and Michael A. Thornton),
 2021, Chapter 17, ***Edward Elgar Publishing***, [DOI
 <img src="man/figures/doi.png"  width="12" height="12">](https://doi.org/10.4337/9781788976480.00027)
 
-Throughout the article, the subset of the banking data will be used:
+Throughout the article, the subset of the banking data (which can be found [here](https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen/tree/main/data)) will be used:
 
 ``` stata
 use ../../banks00_07, clear
