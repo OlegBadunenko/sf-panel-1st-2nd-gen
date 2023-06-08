@@ -1,4 +1,4 @@
-# Replication
+# xtsf1g2g Illustration and Replication
 
 In this article, the functionality of the commands **xtsf1g** and **xtsf2g** is showcased. At the same time, the code provided below can be used to replicate the results in the chapter:
 
