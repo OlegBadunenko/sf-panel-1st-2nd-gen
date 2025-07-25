@@ -2,7 +2,13 @@
 
 In this article, the functionality of the commands **xtsf1g** and **xtsf2g** is showcased. At the same time, the code provided below can be used to replicate the results in the chapter:
 
-> Stochastic frontier analysis in Stata: using existing and coding new commands in "Handbook of Research Methods and Applications in Empirical Microeconomics" (edited by Nigar Hashimzade and Michael A. Thornton), 2021, Chapter 17, ***Edward Elgar Publishing***, [DOI <img src="man/figures/doi.png" width="12" height="12"/>](https://doi.org/10.4337/9781788976480.00027)
+Stochastic frontier analysis in Stata: using existing and coding new
+commands in “Handbook of Research Methods and Applications in Empirical
+Microeconomics” (edited by Nigar Hashimzade and Michael A. Thornton),
+2021, Chapter 17, ***Edward Elgar Publishing***, [DOI
+<img src="man/figures/doi.png"  width="12" height="12">](https://doi.org/10.4337/9781788976480.00027)
+
+> [Download the preprint of the chapter in pdf](https://drive.proton.me/urls/1JJJQS70CW#vXE9aDuyqBdt)
 
 Throughout the article, the subset of the banking data (which can be found [here](https://github.com/OlegBadunenko/sf-panel-1st-2nd-gen/tree/main/data)) will be used:
 

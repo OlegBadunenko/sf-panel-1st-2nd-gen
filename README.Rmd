@@ -27,6 +27,8 @@ Microeconomics" (edited by Nigar Hashimzade and Michael A. Thornton),
 2021, Chapter 17, ***Edward Elgar Publishing***, [DOI
 <img src="mal/doi.png"  width="12" height="12">](https://doi.org/10.4337/9781788976480.00027), [preprint in pdf](https://drive.proton.me/urls/1JJJQS70CW#vXE9aDuyqBdt)
 
+> [preprint of the chapter in pdf](https://drive.proton.me/urls/1JJJQS70CW#vXE9aDuyqBdt)
+
 Here the functionality of the commands **xtsf1g** and **xtsf2g** are showcased. The subset of banking is used:
 
 ```{stata data, collectcode=TRUE} 
