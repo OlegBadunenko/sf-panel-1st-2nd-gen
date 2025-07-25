@@ -12,7 +12,7 @@ Stochastic frontier analysis in Stata: using existing and coding new
 commands in “Handbook of Research Methods and Applications in Empirical
 Microeconomics” (edited by Nigar Hashimzade and Michael A. Thornton),
 2021, Chapter 17, ***Edward Elgar Publishing***, [DOI
-<img src="man/figures/doi.png"  width="12" height="12">](https://doi.org/10.4337/9781788976480.00027)
+<img src="man/figures/doi.png"  width="12" height="12">](https://doi.org/10.4337/9781788976480.00027), [preprint in pdf](https://drive.proton.me/urls/1JJJQS70CW#vXE9aDuyqBdt)
 
 > Codes to replicate the results in the chapter can be found [here](https://olegbadunenko.github.io/sf-panel-1st-2nd-gen/book-examples.html).
 
