@@ -6,7 +6,7 @@
 
 Stata commands to estimate the panel data stochastic frontier models of
 the first and second generation written and maintained by Oleg Badunenko
-(<oleg.badunenko@brunel.ac.uk>). The details are discussed in
+(<oleg.badunenko@brunel.ac.uk>). The details are discussed in the chapter
 
 Stochastic frontier analysis in Stata: using existing and coding new
 commands in “Handbook of Research Methods and Applications in Empirical

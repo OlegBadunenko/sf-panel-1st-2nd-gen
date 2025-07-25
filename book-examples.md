@@ -1,6 +1,6 @@
 # xtsf1g2g Illustration and Replication
 
-In this article, the functionality of the commands **xtsf1g** and **xtsf2g** is showcased. At the same time, the code provided below can be used to replicate the results in the chapter:
+In this article, the functionality of the commands **xtsf1g** and **xtsf2g** is showcased. At the same time, the code provided below can be used to replicate the results presented in the chapter:
 
 Stochastic frontier analysis in Stata: using existing and coding new
 commands in “Handbook of Research Methods and Applications in Empirical
